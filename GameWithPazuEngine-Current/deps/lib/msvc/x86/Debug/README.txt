@@ -1,0 +1,1 @@
+All used libraries (*.lib) with MSVC compiler in x86 (32 bit) Platform and Debug mode outputs put that folder.

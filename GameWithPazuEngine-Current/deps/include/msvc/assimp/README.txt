@@ -1,0 +1,1 @@
+Assimp library header files.

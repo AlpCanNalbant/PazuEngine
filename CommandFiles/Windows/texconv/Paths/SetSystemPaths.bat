@@ -1,0 +1,1 @@
+set Path=%UserProfile%\\WindchimeSoftware\\CommandFiles\\Windows\\texconv\\Paths

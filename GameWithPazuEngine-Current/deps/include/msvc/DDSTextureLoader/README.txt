@@ -1,0 +1,1 @@
+DDSTextureLoader11.h header file from Microsoft Corporation.

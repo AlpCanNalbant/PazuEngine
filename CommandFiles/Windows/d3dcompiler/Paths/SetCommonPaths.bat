@@ -1,0 +1,1 @@
+set shadersHome=%UserProfile%\\WindchimeSoftware\\GameWithPazuEngine\\projects\\SpatyomGame\\Assets\\Shaders\\Direct3D

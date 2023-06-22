@@ -1,0 +1,1 @@
+Magic enum library header file.

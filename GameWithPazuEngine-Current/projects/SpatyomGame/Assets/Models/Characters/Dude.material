@@ -1,0 +1,4 @@
+@Texture
+Diffuse0=Textures/Nature/Dirt.png
+Diffuse1=Textures/Nature/DarkGrass.png
+@Shader
