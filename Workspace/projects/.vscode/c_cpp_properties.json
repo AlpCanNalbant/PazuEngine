@@ -1,0 +1,28 @@
+{
+	"configurations": [
+		{
+			"name": "Win32",
+			"includePath": [
+				"${workspaceFolder}/Sample",
+				"${workspaceFolder}/PazuEngine",
+				"${workspaceFolder}/../deps/include/msvc"
+				// "${workspaceFolder}/../deps/include/mingw"
+			],
+			"defines": [
+				"_DEBUG",
+				"UNICODE",
+				"_UNICODE"
+			],
+			"forcedInclude": [
+				"${workspaceFolder}/PazuEngine/Pazu/Precompiled.h"
+			],
+			"compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.30.30705/bin/Hostx64/x64/cl.exe",
+			// "compilerPath": "C:/Users/mybase/msys64/mingw64/bin/gcc.exe",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "windows-msvc-x64",
+			// "intelliSenseMode": "windows-gcc-x64",
+			"windowsSdkVersion": "10.0.19041.0"
+		}
+	],
+	"version": 4
+}

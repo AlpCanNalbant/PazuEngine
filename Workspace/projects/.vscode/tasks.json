@@ -1,0 +1,1191 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}\\..\\publish\\msvc\\x86\\Debug"
+			},
+			"windows": {
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x86-Release': Game",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}\\..\\publish\\msvc\\x86\\Release"
+			},
+			"windows": {
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run-&-Build 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MSVC-x86-Debug': Game",
+				"Run 'MSVC-x86-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Build 'MSVC-x86-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MSVC-x86-Release': Game",
+				"Run 'MSVC-x86-Release': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MSVC-x86-Debug': Game",
+				"Run 'MSVC-x86-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MSVC-x86-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MSVC-x86-Release': Game",
+				"Run 'MSVC-x86-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Rebuild32Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Rebuild32Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Debug': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MSVC-x86-Debug': CMake",
+				"Build 'MSVC-x86-Debug': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Release': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MSVC-x86-Release': CMake",
+				"Build 'MSVC-x86-Release': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsRebuild32Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x86-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsRebuild32Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Build32Debug.bat"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				// "Create 'TexConv': DDS textures from PNG textures",
+				"Build 'D3DCompiler-x86-Debug': Shader files"
+			]
+		},
+		{
+			"label": "Build 'MSVC-x86-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Build32Release.bat"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				// "Create 'TexConv': DDS textures from PNG textures",
+				"Build 'D3DCompiler-x86-Release': Shader files"
+			]
+		},
+		{
+			"label": "Clean 'MSVC-x86-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Clean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x86-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Clean32Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MSVC-x86-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeBuild32Debug.bat"
+			}
+		},
+		{
+			"label": "Build 'MSVC-x86-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeBuild32Release.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x86-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeClean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x86-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeClean32Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x86-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "RunCMakeGUI32Debug.bat"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x86-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "RunCMakeGUI32Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MSVC-x86-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsBuild32Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build 'MSVC-x86-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsBuild32Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Clean 'MSVC-x86-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsClean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x86-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsClean32Release.bat"
+			}
+		},
+		{
+			"label": "Create 'MSVC-x86-Debug': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CreateDirectories32Debug.bat"
+			}
+		},
+		{
+			"label": "Create 'MSVC-x86-Release': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CreateDirectories32Release.bat"
+			}
+		},
+		{
+			"label": "Build 'D3DCompiler-x86-Debug': Shader files",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\d3dcompiler"
+				},
+				"command": "CompileShaders32Debug.bat"
+			}
+		},
+		{
+			"label": "Build 'D3DCompiler-x86-Release': Shader files",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\d3dcompiler"
+				},
+				"command": "CompileShaders32Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\publish\\msvc\\x64\\Debug"
+				},
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\publish\\msvc\\x64\\Release"
+				},
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run-&-Build 'MSVC-x64-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MSVC-x64-Debug': Game",
+				"Run 'MSVC-x64-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Build 'MSVC-x64-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MSVC-x64-Release': Game",
+				"Run 'MSVC-x64-Release': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MSVC-x64-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MSVC-x64-Debug': Game",
+				"Run 'MSVC-x64-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MSVC-x64-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MSVC-x64-Release': Game",
+				"Run 'MSVC-x64-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Rebuild64Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Rebuild64Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Debug': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MSVC-x64-Debug': CMake",
+				"Build 'MSVC-x64-Debug': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Release': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MSVC-x64-Release': CMake",
+				"Build 'MSVC-x64-Release': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsRebuild64Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Rebuild 'MSVC-x64-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsRebuild64Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build 'MSVC-x64-Debug': Game",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Build64Debug.bat"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				// "Create 'TexConv': DDS textures from PNG textures",
+				"Build 'D3DCompiler-x64-Debug': Shader files"
+			]
+		},
+		{
+			"label": "Build 'MSVC-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Build64Release.bat"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				// "Create 'TexConv': DDS textures from PNG textures",
+				"Build 'D3DCompiler-x64-Release': Shader files"
+			]
+		},
+		{
+			"label": "Clean 'MSVC-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Clean64Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Clean 'MSVC-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "Clean64Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build 'MSVC-x64-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeBuild64Debug.bat"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Build 'MSVC-x64-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeBuild64Release.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x64-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeClean64Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Clean 'MSVC-x64-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CMakeClean64Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x64-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "RunCMakeGUI64Debug.bat"
+			}
+		},
+		{
+			"label": "Run 'MSVC-x64-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "RunCMakeGUI64Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MSVC-x64-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsBuild64Debug.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build 'MSVC-x64-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsBuild64Release.bat"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Clean 'MSVC-x64-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsClean64Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MSVC-x64-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "DepsClean64Release.bat"
+			}
+		},
+		{
+			"label": "Create 'MSVC-x64-Debug': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CreateDirectories64Debug.bat"
+			}
+		},
+		{
+			"label": "Create 'MSVC-x64-Release': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\msvc"
+				},
+				"command": "CreateDirectories64Release.bat"
+			}
+		},
+		{
+			"label": "Build 'D3DCompiler-x64-Debug': Shader files",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\d3dcompiler"
+				},
+				"command": "CompileShaders64Debug.bat"
+			}
+		},
+		{
+			"label": "Build 'D3DCompiler-x64-Release': Shader files",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\d3dcompiler"
+				},
+				"command": "CompileShaders64Release.bat"
+			}
+		},
+		{
+			"label": "Create 'TexConv': DDS textures from PNG textures",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\texconv"
+				},
+				"command": "ConvertTextures.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}\\..\\publish\\mingw\\x86\\Debug"
+			},
+			"windows": {
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x86-Release': Game",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}\\..\\publish\\mingw\\x86\\Release"
+			},
+			"windows": {
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run-&-Build 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MINGW-x86-Debug': Game",
+				"Run 'MINGW-x86-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Build 'MINGW-x86-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MINGW-x86-Release': Game",
+				"Run 'MINGW-x86-Release': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MINGW-x86-Debug': Game",
+				"Run 'MINGW-x86-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MINGW-x86-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MINGW-x86-Release': Game",
+				"Run 'MINGW-x86-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Debug': Game",
+				"Build 'MINGW-x86-Debug': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Release': Game",
+				"Build 'MINGW-x86-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Debug': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Debug': CMake",
+				"Build 'MINGW-x86-Debug': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Release': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Release': CMake",
+				"Build 'MINGW-x86-Release': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Debug': Deps",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Debug': Deps",
+				"Build 'MINGW-x86-Debug': Deps"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x86-Release': Deps",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x86-Release': Deps",
+				"Build 'MINGW-x86-Release': Deps"
+			]
+		},
+		{
+			"label": "Build 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Build32Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'MINGW-x86-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Build32Release.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x86-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Clean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x86-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Clean32Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MINGW-x86-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeBuild32Debug.bat"
+			}
+		},
+		{
+			"label": "Build 'MINGW-x86-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeBuild32Release.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x86-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeClean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x86-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeClean32Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x86-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "RunCMakeGUI32Debug.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x86-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "RunCMakeGUI32Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MINGW-x86-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsBuild32Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'MINGW-x86-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsBuild32Release.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x86-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsClean32Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x86-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsClean32Release.bat"
+			}
+		},
+		{
+			"label": "Create 'MINGW-x86-Debug': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CreateDirectories32Debug.bat"
+			}
+		},
+		{
+			"label": "Create 'MINGW-x86-Release': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CreateDirectories32Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\publish\\mingw\\x64\\Debug"
+				},
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\publish\\mingw\\x64\\Release"
+				},
+				"command": "Game.exe"
+			}
+		},
+		{
+			"label": "Run-&-Build 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MINGW-x64-Debug': Game",
+				"Run 'MINGW-x64-Debug': Game"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Build 'MINGW-x64-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'MINGW-x64-Release': Game",
+				"Run 'MINGW-x64-Release': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MINGW-x64-Debug': Game",
+				"Run 'MINGW-x64-Debug': Game"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'MINGW-x64-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'MINGW-x64-Release': Game",
+				"Run 'MINGW-x64-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Debug': Game",
+				"Build 'MINGW-x64-Debug': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Release': Game",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Release': Game",
+				"Build 'MINGW-x64-Release': Game"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Debug': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Debug': CMake",
+				"Build 'MINGW-x64-Debug': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Release': CMake",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Release': CMake",
+				"Build 'MINGW-x64-Release': CMake"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Debug': Deps",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Debug': Deps",
+				"Build 'MINGW-x64-Debug': Deps"
+			]
+		},
+		{
+			"label": "Rebuild 'MINGW-x64-Release': Deps",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Clean 'MINGW-x64-Release': Deps",
+				"Build 'MINGW-x64-Release': Deps"
+			]
+		},
+		{
+			"label": "Build 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Build64Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'MINGW-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Build64Release.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x64-Debug': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Clean64Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x64-Release': Game",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "Clean64Release.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'MINGW-x64-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeBuild64Debug.bat"
+			}
+		},
+		{
+			"label": "Build 'MINGW-x64-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeBuild64Release.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x64-Debug': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeClean64Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x64-Release': CMake",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CMakeClean64Release.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x64-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "RunCMakeGUI64Debug.bat"
+			}
+		},
+		{
+			"label": "Run 'MINGW-x64-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "RunCMakeGUI64Release.bat"
+			}
+		},
+		{
+			"label": "Build 'MINGW-x64-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsBuild64Debug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'MINGW-x64-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsBuild64Release.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'MINGW-x64-Debug': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsClean64Debug.bat"
+			}
+		},
+		{
+			"label": "Clean 'MINGW-x64-Release': Deps",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "DepsClean64Release.bat"
+			}
+		},
+		{
+			"label": "Create 'MINGW-x64-Debug': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CreateDirectories64Debug.bat"
+			}
+		},
+		{
+			"label": "Create 'MINGW-x64-Release': CMake build directories",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\..\\..\\CommandFiles\\Windows\\mingw"
+				},
+				"command": "CreateDirectories64Release.bat"
+			}
+		}
+	]
+}

@@ -1,1 +1,1 @@
-set texturesHome=%UserProfile%\\WindchimeSoftware\\GameWithPazuEngine\\projects\\SpatyomGame\\Assets
+set texturesHome=%UserProfile%\\WindchimeSoftware\\Workspace\\projects\\Sample\\Assets

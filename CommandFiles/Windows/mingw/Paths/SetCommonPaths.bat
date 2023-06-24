@@ -1,5 +1,5 @@
 set home=%UserProfile%\\WindchimeSoftware
-set workspaceHome=%home%\\GameWithPazuEngine
+set workspaceHome=%home%\\Workspace
 set workspaceProjectsHome=%workspaceHome%\\projects
 set depsHome=%workspaceHome%\\deps
 set depsProjectsHome=%depsHome%\\projects
