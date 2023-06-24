@@ -1,5 +1,5 @@
 #pragma once
-#include <Pazu/Event/MouseEvent.h>
+#include <Pazu/Event/MouseEvent.h>"s"
 
 namespace Pazu
 {
