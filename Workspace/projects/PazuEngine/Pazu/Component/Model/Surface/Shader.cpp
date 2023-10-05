@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Shader.h"
 using namespace Pazu::Graphics;
 
 namespace Pazu
 {
 	Shader::Shader(const std::shared_ptr<ShaderAsset> &asset)
-			: m_asset(asset) {}
+		: m_asset(asset) {}
 
 	void Shader::AddConstantBuffer(std::unique_ptr<ConstantBuffer> constantBuffer)
 	{

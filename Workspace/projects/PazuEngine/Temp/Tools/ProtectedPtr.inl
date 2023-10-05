@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	constexpr ProtectedPtr<T>::ProtectedPtr(T *ptr) noexcept
-			: m_ptr(ptr) {}
+		: m_ptr(ptr) {}
 
 	template <typename T>
 	T *ProtectedPtr<T>::operator->() const noexcept

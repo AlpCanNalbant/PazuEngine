@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	BasicStream<T>::BasicStream(std::basic_ofstream<T> ofstream, std::basic_ifstream<T> ifstream)
-			: m_ofstream(std::move(ofstream)), m_ifstream(std::move(ifstream)) {}
+		: m_ofstream(std::move(ofstream)), m_ifstream(std::move(ifstream)) {}
 
 	template <typename T>
 	void BasicStream<T>::Write(const std::basic_string<T> &string)

@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "BlendState.h"
 
 namespace Pazu::Graphics
 {
 	BlendState::BlendState(const bool enable, const Color &factor)
-			: m_enable(enable), m_factor(factor) {}
+		: m_enable(enable), m_factor(factor) {}
 
 	bool BlendState::GetEnable() const
 	{

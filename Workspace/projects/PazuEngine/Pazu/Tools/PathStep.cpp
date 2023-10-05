@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../File.h"
 #include "PathStep.h"
 
 namespace Pazu
 {
 	PathStep::PathStep()
-			: m_separator(File::Separator) {}
+		: m_separator(File::Separator) {}
 
 	PathStep::PathStep(const std::string &source, const char separator)
 	{

@@ -1,15 +1,17 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Animator.h"
 
 namespace Pazu
 {
 	Animator::Animator(std::initializer_list<Animation> animations)
-			: animations_(animations), currentAnimation_(&animations_.front()) {}
+		: animations_(animations), currentAnimation_(&animations_.front()) {}
 
 	Animator::Animator(const std::vector<Animation> &animations)
-			: animations_(animations), currentAnimation_(&animations_.front()) {}
+		: animations_(animations), currentAnimation_(&animations_.front()) {}
 
 	Animator::Animator(std::vector<Animation> &&animations)
-			: animations_(std::move(animations)), currentAnimation_(&animations_.front()) {}
+		: animations_(std::move(animations)), currentAnimation_(&animations_.front()) {}
 
 	void Animator::Play(const bool replay)
 	{
@@ -26,8 +28,8 @@ namespace Pazu
 	std::optional<std::reference_wrapper<const Animation>> Animator::FindAnimation(const std::string &name) const
 	{
 		if (const auto pos = std::find_if(animations_.cbegin(), animations_.cend(), [&name](const auto &a)
-																			{ return a.GetName() == name; });
-				pos != animations_.cend())
+										  { return a.GetName() == name; });
+			pos != animations_.cend())
 		{
 			return std::make_optional(std::cref(*pos));
 		}
@@ -38,8 +40,8 @@ namespace Pazu
 	std::optional<std::reference_wrapper<Animation>> Animator::FindAnimation(const std::string &name)
 	{
 		if (auto pos = std::find_if(animations_.begin(), animations_.end(), [&name](const auto &a)
-																{ return a.GetName() == name; });
-				pos != animations_.cend())
+									{ return a.GetName() == name; });
+			pos != animations_.cend())
 		{
 			return std::make_optional(std::ref(*pos));
 		}

@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexPosition<T>::VertexPosition(const std::array<T, 3> &positionData) noexcept
-			: m_positionData(positionData) {}
+		: m_positionData(positionData) {}
 
 	template <typename T>
 	VertexPosition<T>::VertexPosition(const Vector3 &position) noexcept

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../../../Math/Color.h"
 #include "../../GraphicsContextConfig.h"
 #include "GraphicsContextHandle.h"

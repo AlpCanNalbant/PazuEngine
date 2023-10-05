@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Window.h"
 #include "WindowHandle.h"
 #include "Display.h"
@@ -5,7 +7,7 @@
 namespace Pazu
 {
 	Display::Display()
-			: m_displayModes(SDL_GetNumVideoDisplays())
+		: m_displayModes(SDL_GetNumVideoDisplays())
 	{
 		for (std::size_t x = 0; x < m_displayModes.size(); ++x)
 		{
@@ -42,8 +44,8 @@ namespace Pazu
 			const Size size = {static_cast<unsigned int>(displayMode.w), static_cast<unsigned int>(displayMode.h)};
 			const auto refreshRate = static_cast<unsigned int>(displayMode.refresh_rate);
 			if (const auto pos = std::find_if(videoModes.begin(), videoModes.end(), [&size](const VideoMode &vm)
-																				{ return vm.size == size; });
-					pos == videoModes.cend())
+											  { return vm.size == size; });
+				pos == videoModes.cend())
 				videoModes.emplace_back(VideoMode(size, {refreshRate}));
 			else
 				pos->refreshRates.emplace_back(refreshRate);

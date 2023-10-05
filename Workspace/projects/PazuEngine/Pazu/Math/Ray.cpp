@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include <XMath/DirectXCollision.h>
 #include "Vector3.h"
@@ -16,10 +19,10 @@
 namespace Pazu
 {
 	Ray::Ray()
-			: position(0.f, 0.f, 0.f), direction(0.f, 0.f, 1.f) {}
+		: position(0.f, 0.f, 0.f), direction(0.f, 0.f, 1.f) {}
 
 	Ray::Ray(const Vector3 &pos, const Vector3 &dir)
-			: position(pos), direction(dir) {}
+		: position(pos), direction(dir) {}
 
 	bool Ray::operator==(const Ray &r) const
 	{

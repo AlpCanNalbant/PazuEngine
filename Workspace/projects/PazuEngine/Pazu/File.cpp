@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "File.h"
 
 namespace Pazu
 {
 	File::File()
-			: m_baseDir(GetBaseDirPtr().release()), m_dir(m_baseDir) {}
+		: m_baseDir(GetBaseDirPtr().release()), m_dir(m_baseDir) {}
 
 	File &File::Get()
 	{
@@ -19,11 +21,11 @@ namespace Pazu
 	std::unique_ptr<char, void (*)(char *)> File::GetBaseDirPtr() const
 	{
 		return {SDL_GetBasePath(), [](char *p)
-						{
-							if (p)
-								SDL_free(p);
-							p = nullptr;
-						}};
+				{
+					if (p)
+						SDL_free(p);
+					p = nullptr;
+				}};
 	}
 
 	const std::string &File::GetDir() const

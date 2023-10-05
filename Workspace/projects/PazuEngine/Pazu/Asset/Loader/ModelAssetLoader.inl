@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
@@ -23,9 +25,9 @@ namespace Pazu
 	{
 		Assimp::Importer importer;
 		constexpr auto flags =
-				aiProcess_FindDegenerates | aiProcess_FindInvalidData | aiProcess_FlipUVs | aiProcess_FlipWindingOrder |
-				aiProcess_JoinIdenticalVertices | aiProcess_FlipUVs | aiProcess_FlipWindingOrder | aiProcess_JoinIdenticalVertices |
-				aiProcess_ImproveCacheLocality | aiProcess_OptimizeMeshes | aiProcess_Triangulate;
+			aiProcess_FindDegenerates | aiProcess_FindInvalidData | aiProcess_FlipUVs | aiProcess_FlipWindingOrder |
+			aiProcess_JoinIdenticalVertices | aiProcess_FlipUVs | aiProcess_FlipWindingOrder | aiProcess_JoinIdenticalVertices |
+			aiProcess_ImproveCacheLocality | aiProcess_OptimizeMeshes | aiProcess_Triangulate;
 		const auto aiScene = importer.ReadFileFromMemory(resourceHandle.c_str(), resourceHandle.size(), flags);
 		if (!aiScene || aiScene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !aiScene->mRootNode)
 			return Log::Get().Print<LogMode::Error, std::nullptr_t>({"Model verisi alinamadi. Assimp hata mesaji: ", importer.GetErrorString()});
@@ -225,8 +227,8 @@ namespace Pazu
 	std::array<typename T::Index, 3> ModelAssetLoader<T>::LoadIndex(const aiFace &aiFace) const
 	{
 		return aiFace.mNumIndices == 3
-							 ? std::array<typename T::Index, 3>{aiFace.mIndices[0], aiFace.mIndices[1], aiFace.mIndices[2]}
-							 : Log::Get().Print<LogMode::Error, std::array<typename T::Index, 3>>("Model yuzeyinde hatali sayida index bulundu.");
+				   ? std::array<typename T::Index, 3>{aiFace.mIndices[0], aiFace.mIndices[1], aiFace.mIndices[2]}
+				   : Log::Get().Print<LogMode::Error, std::array<typename T::Index, 3>>("Model yuzeyinde hatali sayida index bulundu.");
 	}
 
 	template <typename T>
@@ -331,9 +333,9 @@ namespace Pazu
 	Matrix ModelAssetLoader<T>::ToMatrix(const aiMatrix4x4 &aiMatrix) const
 	{
 		return {aiMatrix.a1, aiMatrix.b1, aiMatrix.c1, aiMatrix.d1,
-						aiMatrix.a2, aiMatrix.b2, aiMatrix.c2, aiMatrix.d2,
-						aiMatrix.a3, aiMatrix.b3, aiMatrix.c3, aiMatrix.d3,
-						aiMatrix.a4, aiMatrix.b4, aiMatrix.c4, aiMatrix.d4};
+				aiMatrix.a2, aiMatrix.b2, aiMatrix.c2, aiMatrix.d2,
+				aiMatrix.a3, aiMatrix.b3, aiMatrix.c3, aiMatrix.d3,
+				aiMatrix.a4, aiMatrix.b4, aiMatrix.c4, aiMatrix.d4};
 	}
 
 	template <typename T>

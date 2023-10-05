@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include <memory.h>
 #include "Plane.h"
@@ -18,22 +21,22 @@
 namespace Pazu
 {
 	Matrix::Matrix()
-			: XMFLOAT4X4(1.f, 0, 0, 0,
-									 0, 1.f, 0, 0,
-									 0, 0, 1.f, 0,
-									 0, 0, 0, 1.f) {}
+		: XMFLOAT4X4(1.f, 0, 0, 0,
+					 0, 1.f, 0, 0,
+					 0, 0, 1.f, 0,
+					 0, 0, 0, 1.f) {}
 
 	Matrix::Matrix(const Vector3 &r0, const Vector3 &r1, const Vector3 &r2)
-			: XMFLOAT4X4(r0.x, r0.y, r0.z, 0,
-									 r1.x, r1.y, r1.z, 0,
-									 r2.x, r2.y, r2.z, 0,
-									 0, 0, 0, 1.f) {}
+		: XMFLOAT4X4(r0.x, r0.y, r0.z, 0,
+					 r1.x, r1.y, r1.z, 0,
+					 r2.x, r2.y, r2.z, 0,
+					 0, 0, 0, 1.f) {}
 
 	Matrix::Matrix(const Vector4 &r0, const Vector4 &r1, const Vector4 &r2, const Vector4 &r3)
-			: XMFLOAT4X4(r0.x, r0.y, r0.z, r0.w,
-									 r1.x, r1.y, r1.z, r1.w,
-									 r2.x, r2.y, r2.z, r2.w,
-									 r3.x, r3.y, r3.z, r3.w) {}
+		: XMFLOAT4X4(r0.x, r0.y, r0.z, r0.w,
+					 r1.x, r1.y, r1.z, r1.w,
+					 r2.x, r2.y, r2.z, r2.w,
+					 r3.x, r3.y, r3.z, r3.w) {}
 
 	Matrix::Matrix(const XMFLOAT4X4 &M)
 	{
@@ -81,7 +84,7 @@ namespace Pazu
 	}
 
 	Matrix::Matrix(_In_reads_(16) const float *pArray)
-			: XMFLOAT4X4(pArray) {}
+		: XMFLOAT4X4(pArray) {}
 
 	Matrix::Matrix(DirectX::CXMMATRIX M)
 	{
@@ -463,10 +466,10 @@ namespace Pazu
 	}
 
 	_Use_decl_annotations_ Matrix Matrix::CreateBillboard(
-			const Vector3 &object,
-			const Vector3 &cameraPosition,
-			const Vector3 &cameraUp,
-			const Vector3 *cameraForward)
+		const Vector3 &object,
+		const Vector3 &cameraPosition,
+		const Vector3 &cameraUp,
+		const Vector3 *cameraForward)
 	{
 		using namespace DirectX;
 		XMVECTOR O = XMLoadFloat3(&object);
@@ -507,11 +510,11 @@ namespace Pazu
 	}
 
 	_Use_decl_annotations_ Matrix Matrix::CreateConstrainedBillboard(
-			const Vector3 &object,
-			const Vector3 &cameraPosition,
-			const Vector3 &rotateAxis,
-			const Vector3 *cameraForward,
-			const Vector3 *objectForward)
+		const Vector3 &object,
+		const Vector3 &cameraPosition,
+		const Vector3 &rotateAxis,
+		const Vector3 *cameraForward,
+		const Vector3 *objectForward)
 	{
 		using namespace DirectX;
 
@@ -840,10 +843,10 @@ namespace Pazu
 	}
 
 	const Matrix
-			Matrix::Identity(1.f, 0.f, 0.f, 0.f,
-											 0.f, 1.f, 0.f, 0.f,
-											 0.f, 0.f, 1.f, 0.f,
-											 0.f, 0.f, 0.f, 1.f);
+		Matrix::Identity(1.f, 0.f, 0.f, 0.f,
+						 0.f, 1.f, 0.f, 0.f,
+						 0.f, 0.f, 1.f, 0.f,
+						 0.f, 0.f, 0.f, 1.f);
 
 	Matrix operator+(const Matrix &M1, const Matrix &M2)
 	{

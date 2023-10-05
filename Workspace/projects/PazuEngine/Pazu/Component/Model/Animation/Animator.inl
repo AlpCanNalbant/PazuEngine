@@ -1,7 +1,9 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
-	requires std::convertible_to<T, Animation>
+		requires std::convertible_to<T, Animation>
 	bool Animator::AddAnimation(T &&animation)
 	{
 		if (animation && !FindAnimation(animation->GetName()))

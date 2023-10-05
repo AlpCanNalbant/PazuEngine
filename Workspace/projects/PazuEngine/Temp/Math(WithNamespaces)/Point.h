@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include <string>
 #include <XMath/DirectXMath.h>
@@ -32,10 +34,10 @@ namespace Pazu::Math
 		String ToString() const noexcept;
 
 		static const Point
-				Zero,
-				One,
-				UnitX,
-				UnitY;
+			Zero,
+			One,
+			UnitX,
+			UnitY;
 	};
 
 	Point operator+(const Point &point1, const Point &point2) noexcept;

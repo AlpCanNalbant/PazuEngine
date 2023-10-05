@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../../../WindowHandle.h"
 #include "Shader/VertexShaderHandle.h"
 #include "Shader/PixelShaderHandle.h"

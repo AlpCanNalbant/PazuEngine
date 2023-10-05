@@ -1,12 +1,14 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexPositionColor<T>::VertexPositionColor(const std::array<T, 3> &positionData, const std::array<T, 4> &colorData) noexcept
-			: VertexPosition<T>(positionData), VertexColor<T>(colorData) {}
+		: VertexPosition<T>(positionData), VertexColor<T>(colorData) {}
 
 	template <typename T>
 	VertexPositionColor<T>::VertexPositionColor(const Vector3 &position, const Color &color) noexcept
-			: VertexPosition<T>(position), VertexColor<T>(color) {}
+		: VertexPosition<T>(position), VertexColor<T>(color) {}
 
 	template <typename T>
 	std::vector<T> VertexPositionColor<T>::ToData() const noexcept

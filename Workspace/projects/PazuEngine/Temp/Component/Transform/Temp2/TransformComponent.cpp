@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "TransformComponent.h"
 
 namespace Pazu
 {
 	TransformComponent::TransformComponent() noexcept
-			: m_hierarchy(this) {}
+		: m_hierarchy(this) {}
 
 	Matrix TransformComponent::GetMatrix() const noexcept
 	{

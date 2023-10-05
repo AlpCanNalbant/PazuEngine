@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <algorithm>
 #include <ResourceManager/ResourceHandle.h>
 #if defined(_WIN32)
@@ -19,7 +21,7 @@ namespace Pazu
 	{
 		std::string fileFormat(file.cend() - 3, file.cend());
 		std::transform(fileFormat.cbegin(), fileFormat.cend(), fileFormat.begin(), [](auto c)
-									 { return std::tolower(c); });
+					   { return std::tolower(c); });
 		if (fileFormat != "dds")
 			return Log::Get().Print<LogMode::Error, std::nullptr_t>("Texture yuklenemedi. Dosya formati desteklenmiyor.");
 		const ResourceHandle rh(file);

@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include "Vector3.h"
 #include "Vector4.h"
@@ -16,16 +19,16 @@
 namespace Pazu
 {
 	Quaternion::Quaternion()
-			: XMFLOAT4(0.f, 0.f, 0.f, 1.f) {}
+		: XMFLOAT4(0.f, 0.f, 0.f, 1.f) {}
 
 	Quaternion::Quaternion(const Vector3 &v, float scalar)
-			: XMFLOAT4(v.x, v.y, v.z, scalar) {}
+		: XMFLOAT4(v.x, v.y, v.z, scalar) {}
 
 	Quaternion::Quaternion(const Vector4 &v)
-			: XMFLOAT4(v.x, v.y, v.z, v.w) {}
+		: XMFLOAT4(v.x, v.y, v.z, v.w) {}
 
 	Quaternion::Quaternion(_In_reads_(4) const float *pArray)
-			: XMFLOAT4(pArray) {}
+		: XMFLOAT4(pArray) {}
 
 	Quaternion::Quaternion(DirectX::FXMVECTOR V)
 	{
@@ -314,7 +317,7 @@ namespace Pazu
 	}
 
 	const Quaternion
-			Quaternion::Identity(0.f, 0.f, 0.f, 1.f);
+		Quaternion::Identity(0.f, 0.f, 0.f, 1.f);
 
 	Quaternion operator+(const Quaternion &Q1, const Quaternion &Q2)
 	{

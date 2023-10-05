@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../WindowHandle.h"
 #include "../Window.h"
 #include "ContextConfig.h"
@@ -9,7 +11,7 @@
 namespace Pazu::Graphics
 {
 	Context::Context(const std::shared_ptr<Device> &device, const std::shared_ptr<Window> &window, const ContextConfig &config)
-			: m_device(device), m_window(window), m_config(config)
+		: m_device(device), m_window(window), m_config(config)
 	{
 		switch (Engine::GetGraphicsApi())
 		{

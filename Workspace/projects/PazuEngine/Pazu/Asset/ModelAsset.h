@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "../Component/Model/Animation/Skeleton.h"
 #include "../Component/Model/Animation/Animator.h"
@@ -16,7 +18,7 @@ namespace Pazu
 		ModelAsset() = default;
 
 		ModelAsset(std::vector<SurfaceStaticModel> &&surfaces)
-				: surfaces(std::move(surfaces)) {}
+			: surfaces(std::move(surfaces)) {}
 
 		std::vector<SurfaceStaticModel> surfaces;
 	};
@@ -27,7 +29,7 @@ namespace Pazu
 		ModelAsset() = default;
 
 		ModelAsset(std::vector<SurfaceAnimatedModel> &&surfaces, Animator &&animator, Skeleton &&skeleton)
-				: surfaces(std::move(surfaces)), animator(std::move(animator)), skeleton(std::move(skeleton)) {}
+			: surfaces(std::move(surfaces)), animator(std::move(animator)), skeleton(std::move(skeleton)) {}
 
 		std::vector<SurfaceAnimatedModel> surfaces;
 		Animator animator;

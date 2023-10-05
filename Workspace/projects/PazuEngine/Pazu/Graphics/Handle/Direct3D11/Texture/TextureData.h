@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include <DDSTextureLoader/DDSTextureLoader11.h>
 #include "../../../Texture/ITextureData.h"

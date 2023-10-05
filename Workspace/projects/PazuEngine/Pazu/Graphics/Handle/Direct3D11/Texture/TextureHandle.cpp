@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../../../../Math/Color.h"
 #include "Texture2DHandle.h"
 
 namespace Pazu::Graphics::Direct3D11
 {
 	TextureHandle::TextureHandle(const Texture &texture)
-			: m_data(texture.GetData<TextureData>()) {}
+		: m_data(texture.GetData<TextureData>()) {}
 
 	const UniqueComPtr<ID3D11ShaderResourceView> &TextureHandle::GetShaderResourceView() const
 	{

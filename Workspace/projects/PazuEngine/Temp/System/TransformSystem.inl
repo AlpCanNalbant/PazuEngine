@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
@@ -61,43 +63,43 @@ namespace Pazu
 		if constexpr (std::is_same_v<T, TransformPositionComponent>)
 		{
 			if (!m_posComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_posComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformRotationComponent>)
 		{
 			if (!m_rotComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_rotComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformScaleComponent>)
 		{
 			if (!m_scaleComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_scaleComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionRotationComponent>)
 		{
 			if (!m_posRotComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_posRotComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionScaleComponent>)
 		{
 			if (!m_posScaleComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_posScaleComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionRotationScaleComponent>)
 		{
 			if (!m_posRotScaleComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_posRotScaleComponents.at(child)->GetParent();
 		}
 		else if constexpr (std::is_same_v<T, TransformRotationScaleComponent>)
 		{
 			if (!m_rotScaleComponents.contains(child))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem parent alinamadi. Entity kayitli degil.", errorResult);
 			return m_rotScaleComponents.at(child)->GetParent();
 		}
 	}
@@ -109,43 +111,43 @@ namespace Pazu
 		if constexpr (std::is_same_v<T, TransformPositionComponent>)
 		{
 			if (!m_posComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_posComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformRotationComponent>)
 		{
 			if (!m_rotComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_rotComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformScaleComponent>)
 		{
 			if (!m_scaleComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_scaleComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionRotationComponent>)
 		{
 			if (!m_posRotComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_posRotComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionScaleComponent>)
 		{
 			if (!m_posScaleComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_posScaleComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformPositionRotationScaleComponent>)
 		{
 			if (!m_posRotScaleComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_posRotScaleComponents.at(parent)->GetChilds();
 		}
 		else if constexpr (std::is_same_v<T, TransformRotationScaleComponent>)
 		{
 			if (!m_rotScaleComponents.contains(parent))
-				return errorResult; //TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
+				return errorResult; // TLog::Get().Print<LogMode::Error>("TransformSystem childs alinamadi. Entity kayitli degil.", errorResult);
 			return m_rotScaleComponents.at(parent)->GetChilds();
 		}
 	}

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include <string>
 #include <XMath/DirectXMath.h>
@@ -36,10 +38,10 @@ namespace Pazu::Math
 		constexpr void Height(const int32_t h) noexcept;
 
 		static const Size
-				Zero,
-				One,
-				UnitX,
-				UnitY;
+			Zero,
+			One,
+			UnitX,
+			UnitY;
 	};
 
 	Size operator+(const Size &size1, const Size &size2) noexcept;

@@ -1,7 +1,9 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
-	requires std::convertible_to<T, Bone>
+		requires std::convertible_to<T, Bone>
 	bool Skeleton::AddBone(T &&bone)
 	{
 		if (FindBone(bone.GetName()))

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
@@ -10,8 +12,8 @@ namespace Pazu
 	std::optional<std::reference_wrapper<const std::unique_ptr<T>>> ModelComponent<T>::FindSurface(const std::shared_ptr<Material> &material) const
 	{
 		if (const auto pos = std::find_if(m_surfaces.cbegin(), m_surfaces.cend(), [&material](const auto &s)
-																			{ return s->material == material; });
-				pos != m_surfaces.cend())
+										  { return s->material == material; });
+			pos != m_surfaces.cend())
 			return std::make_optional(std::cref(*pos));
 		return std::nullopt;
 	}

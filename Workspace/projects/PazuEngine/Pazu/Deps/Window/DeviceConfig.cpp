@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <algorithm>
 #include "DeviceConfig.h"
 using namespace magic_enum;
@@ -53,7 +55,7 @@ namespace Pazu::Sdl
 	{
 		std::string hintValue(enum_name(renderDriver));
 		std::transform(hintValue.begin(), hintValue.end(), hintValue.begin(), [](auto c)
-									 { return std::tolower(c); });
+					   { return std::tolower(c); });
 		if (SDL_SetHintWithPriority(SDL_HINT_RENDER_DRIVER, hintValue.c_str(), override ? SDL_HINT_OVERRIDE : SDL_HINT_NORMAL) == SDL_FALSE)
 			Log::Get().Print<LogMode::Error>("RenderDriver=" + std::string(enum_name(renderDriver)) + " ayarlanamadi.");
 #if defined(_DEBUG)

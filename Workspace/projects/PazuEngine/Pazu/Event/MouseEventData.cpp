@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "MouseEventData.h"
 using namespace magic_enum;
 
 namespace Pazu
 {
 	MouseEventData::MouseEventData(const unsigned int &stateId, const int &x, const int &y, const int &relativeX, const int &relativeY, const int &wheel, const unsigned char &buttonCode)
-			: stateId(stateId), x(x), y(y), relativeX(relativeX), relativeY(relativeY), wheel(wheel), buttonCode(buttonCode) {}
+		: stateId(stateId), x(x), y(y), relativeX(relativeX), relativeY(relativeY), wheel(wheel), buttonCode(buttonCode) {}
 
 	MouseEventState MouseEventData::GetState() const
 	{

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../../../Asset/TextureAsset.h"
 #include "Texture.h"
 using namespace Pazu::Graphics;
@@ -5,7 +7,7 @@ using namespace Pazu::Graphics;
 namespace Pazu
 {
 	Texture::Texture(const std::shared_ptr<TextureAsset> &asset)
-			: m_asset(asset) {}
+		: m_asset(asset) {}
 
 	const Size &Texture::GetSize() const
 	{

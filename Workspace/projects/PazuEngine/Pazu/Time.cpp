@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Time.h"
 using namespace std::chrono;
 
 namespace Pazu
 {
 	Time::Time()
-			: m_last(steady_clock::now()) {}
+		: m_last(steady_clock::now()) {}
 
 	float Time::GetDelta() const
 	{

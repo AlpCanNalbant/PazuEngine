@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "UniqueComPtr.h"
 
 namespace Pazu
 {
 	template <typename T>
 	UniqueComPtr<T>::UniqueComPtr(UniqueComPtr<T> &&other)
-			: m_comPtr(other.m_comPtr)
+		: m_comPtr(other.m_comPtr)
 	{
 		other.m_comPtr = nullptr;
 	}

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "BufferHandle.h"
 
 namespace Pazu::Graphics::Direct3D11

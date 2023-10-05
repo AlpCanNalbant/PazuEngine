@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "MouseEventData.h"
 #include "MouseEvent.h"
 using namespace magic_enum;

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Graphics/IContextHandle.h"
 #include "Window.h"
 #include "WindowHandle.h"
@@ -6,7 +8,7 @@ using namespace magic_enum::flags;
 namespace Pazu
 {
 	WindowHandle::WindowHandle()
-			: WindowHandle(Window::DefaultTitle, Window::DefaultPosition, Window::DefaultSize, Window::DefaultFlags) {}
+		: WindowHandle(Window::DefaultTitle, Window::DefaultPosition, Window::DefaultSize, Window::DefaultFlags) {}
 
 	WindowHandle::WindowHandle(const std::string &title, const Point &position, const Size &size, const WindowFlag flags)
 	{
@@ -134,10 +136,10 @@ namespace Pazu
 	WindowFlag WindowHandle::GetFlags() const
 	{
 		return enum_cast<WindowFlag>(
-							 SDL_GetWindowFlags(m_window.get()) &
-							 (SDL_WINDOW_SHOWN | SDL_WINDOW_HIDDEN | SDL_WINDOW_HIDDEN | SDL_WINDOW_BORDERLESS | SDL_WINDOW_RESIZABLE |
-								SDL_WINDOW_MINIMIZED | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_FULLSCREEN))
-				.value_or(WindowFlag::FullscreenBorderless);
+				   SDL_GetWindowFlags(m_window.get()) &
+				   (SDL_WINDOW_SHOWN | SDL_WINDOW_HIDDEN | SDL_WINDOW_HIDDEN | SDL_WINDOW_BORDERLESS | SDL_WINDOW_RESIZABLE |
+					SDL_WINDOW_MINIMIZED | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_FULLSCREEN))
+			.value_or(WindowFlag::FullscreenBorderless);
 	}
 
 	void WindowHandle::SetTitle(const std::string &title) const
@@ -156,7 +158,7 @@ namespace Pazu
 		{
 			SDL_SetWindowSize(m_window.get(), size.x, size.y);
 			if (const auto context = m_graphicsContext.lock();
-					context && Engine::GetGraphicsApi() == Graphics::Api::Direct3D11)
+				context && Engine::GetGraphicsApi() == Graphics::Api::Direct3D11)
 				context->Resize(size);
 		}
 		else
@@ -193,7 +195,7 @@ namespace Pazu
 			CenterToScreen();
 		}
 		if (const auto context = m_graphicsContext.lock();
-				context && Engine::GetGraphicsApi() == Graphics::Api::Direct3D11)
+			context && Engine::GetGraphicsApi() == Graphics::Api::Direct3D11)
 		{
 			const auto size = GetSize();
 			context->Resize(size);

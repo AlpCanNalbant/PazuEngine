@@ -1,13 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <functional>
 #include "Size.h"
 
 namespace Pazu
 {
 	Size::Size()
-			: XMUINT2(0, 0) {}
+		: XMUINT2(0, 0) {}
 
 	Size::Size(_In_reads_(2) const unsigned int *array)
-			: XMUINT2(array) {}
+		: XMUINT2(array) {}
 
 	Size::Size(DirectX::FXMVECTOR xmVector)
 	{
@@ -119,10 +121,10 @@ namespace Pazu
 	}
 
 	const Size
-			Size::Zero(0, 0),
-			Size::One(1, 1),
-			Size::UnitX(1, 0),
-			Size::UnitY(0, 1);
+		Size::Zero(0, 0),
+		Size::One(1, 1),
+		Size::UnitX(1, 0),
+		Size::UnitY(0, 1);
 
 	Size operator+(const Size &size1, const Size &size2)
 	{

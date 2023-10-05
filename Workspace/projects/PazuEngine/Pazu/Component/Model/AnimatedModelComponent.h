@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "../../Asset/AnimatedModelAsset.h"
 #include "Animation/Animator.h"

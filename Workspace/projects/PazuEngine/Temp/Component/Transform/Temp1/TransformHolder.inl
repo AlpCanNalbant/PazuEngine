@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	TransformHolder<T>::TransformHolder(const std::shared_ptr<T> &transform) noexcept
-			: m_transform(transform) {}
+		: m_transform(transform) {}
 
 	template <typename T>
 	void TransformHolder<T>::AddChild(const std::shared_ptr<T> &child) noexcept

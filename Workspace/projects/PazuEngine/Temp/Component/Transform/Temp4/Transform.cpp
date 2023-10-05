@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Vector2.h"
 #include "Transform.h"
 
 namespace Pazu
 {
 	Transform::Transform() noexcept
-			: m_hierarchy(this) {}
+		: m_hierarchy(this) {}
 
 	Matrix Transform::CreateTranslation() noexcept
 	{

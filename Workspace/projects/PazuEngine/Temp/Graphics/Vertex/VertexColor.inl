@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexColor<T>::VertexColor(const std::array<T, 4> &colorData) noexcept
-			: m_colorData(colorData) {}
+		: m_colorData(colorData) {}
 
 	template <typename T>
 	VertexColor<T>::VertexColor(const Color &color) noexcept

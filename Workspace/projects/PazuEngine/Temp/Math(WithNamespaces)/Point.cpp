@@ -1,13 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <functional>
 #include "Point.h"
 
 namespace Pazu::Math
 {
 	Point::Point() noexcept
-			: XMINT2(0, 0) {}
+		: XMINT2(0, 0) {}
 
 	Point::Point(_In_reads_(2) const int *array) noexcept
-			: XMINT2(array) {}
+		: XMINT2(array) {}
 
 	Point::Point(DirectX::FXMVECTOR v) noexcept
 	{
@@ -193,10 +195,10 @@ namespace Pazu::Math
 	}
 
 	const Point
-			Point::Zero(0, 0),
-			Point::One(1, 1),
-			Point::UnitX(1, 0),
-			Point::UnitY(0, 1);
+		Point::Zero(0, 0),
+		Point::One(1, 1),
+		Point::UnitX(1, 0),
+		Point::UnitY(0, 1);
 } // namespace Pazu
 
 namespace std

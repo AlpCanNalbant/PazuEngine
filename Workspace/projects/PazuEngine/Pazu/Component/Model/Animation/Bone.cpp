@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Bone.h"
 
 namespace Pazu
 {
 	Bone::Bone(const std::string &name, const unsigned int id, const Matrix &offset, const Transform &transform)
-			: m_name(name), m_id(id), m_offset(offset), m_transform(transform) {}
+		: m_name(name), m_id(id), m_offset(offset), m_transform(transform) {}
 
 	const std::string &Bone::GetName() const
 	{

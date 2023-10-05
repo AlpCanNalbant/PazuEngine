@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include "Matrix.h"
 #include "Quaternion.h"
@@ -16,10 +19,10 @@
 namespace Pazu
 {
 	Vector2::Vector2()
-			: XMFLOAT2(0.f, 0.f) {}
+		: XMFLOAT2(0.f, 0.f) {}
 
 	Vector2::Vector2(_In_reads_(2) const float *pArray)
-			: XMFLOAT2(pArray) {}
+		: XMFLOAT2(pArray) {}
 
 	Vector2::Vector2(DirectX::FXMVECTOR V)
 	{
@@ -532,10 +535,10 @@ namespace Pazu
 	}
 
 	const Vector2
-			Vector2::Zero(0.f, 0.f),
-			Vector2::One(1.f, 1.f),
-			Vector2::UnitX(1.f, 0.f),
-			Vector2::UnitY(0.f, 1.f);
+		Vector2::Zero(0.f, 0.f),
+		Vector2::One(1.f, 1.f),
+		Vector2::UnitX(1.f, 0.f),
+		Vector2::UnitY(0.f, 1.f);
 
 	Vector2 operator+(const Vector2 &V1, const Vector2 &V2)
 	{

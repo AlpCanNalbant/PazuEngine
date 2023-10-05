@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "SamplerState.h"
 
 namespace Pazu::Graphics
 {
 	SamplerState::SamplerState(const TextureFilter textureFilter, const TextureWrap textureWrap, const bool mipmap)
-			: m_textureFilter(textureFilter), m_textureWrap(textureWrap), m_mipmap(mipmap) {}
+		: m_textureFilter(textureFilter), m_textureWrap(textureWrap), m_mipmap(mipmap) {}
 
 	TextureFilter SamplerState::GetTextureFilter() const
 	{

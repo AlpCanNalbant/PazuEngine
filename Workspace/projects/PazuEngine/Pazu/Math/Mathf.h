@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include <initializer_list>
 #include <numeric>
@@ -48,10 +50,10 @@ namespace Pazu
 		static float DeltaAngle(const float current, const float target);
 
 		static constexpr float
-				Pi{3.141592654f},
-				TwoPi{6.283185307f},
-				PiOver2{1.570796327f},
-				PiOver4{0.785398163f};
+			Pi{3.141592654f},
+			TwoPi{6.283185307f},
+			PiOver2{1.570796327f},
+			PiOver4{0.785398163f};
 		static constexpr float Infinity = std::numeric_limits<float>::infinity();
 		static constexpr float Epsilon = std::numeric_limits<float>::epsilon();
 	};

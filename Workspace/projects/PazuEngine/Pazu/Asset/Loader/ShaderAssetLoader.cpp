@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <algorithm>
 #include <ResourceManager/ResourceHandle.h>
 #include "../AssetManager.h"
@@ -36,7 +38,7 @@ namespace Pazu
 				{
 					typeTitle += *first;
 					std::transform(typeTitle.begin() + x, typeTitle.end(), typeTitle.begin() + x, [](auto c)
-												 { return std::tolower(c); });
+								   { return std::tolower(c); });
 					if (typeTitle == "vertex")
 						currentType = 0;
 					else if (typeTitle == "pixel")

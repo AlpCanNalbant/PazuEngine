@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Texture.h"
 
 namespace Pazu::Graphics
 {
 	Texture::Texture(const std::shared_ptr<ITextureData> &data, const Size &size)
-			: m_data(data), m_size(size) {}
+		: m_data(data), m_size(size) {}
 
 	const Size &Texture::GetSize() const
 	{

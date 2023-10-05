@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Shader/VertexShader.h"
 #include "Shader/PixelShader.h"
 #include "Buffer/VertexBuffer.h"

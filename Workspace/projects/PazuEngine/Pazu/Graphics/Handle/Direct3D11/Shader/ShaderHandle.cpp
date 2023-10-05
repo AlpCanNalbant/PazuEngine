@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include <d3dcompiler.h>
 #include "ShaderHandle.h"
 using namespace magic_enum;

@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexPositionNormalColorTexture<T>::VertexPositionNormalColorTexture(const std::array<T, 3> &position, const std::array<T, 3> &normal, const std::array<T, 4> &color, const std::array<T, 2> &texture) noexcept
-			: VertexPosition<T>(position), VertexNormal<T>(normal), VertexColor<T>(color), VertexTexture<T>(texture) {}
+		: VertexPosition<T>(position), VertexNormal<T>(normal), VertexColor<T>(color), VertexTexture<T>(texture) {}
 
 	template <typename T>
 	std::vector<T> VertexPositionNormalColorTexture<T>::ToData() const noexcept

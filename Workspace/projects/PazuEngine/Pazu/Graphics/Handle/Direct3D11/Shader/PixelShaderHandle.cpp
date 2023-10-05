@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "PixelShaderHandle.h"
 
 namespace Pazu::Graphics::Direct3D11
 {
 	PixelShaderHandle::PixelShaderHandle(PixelShader &pixelShader)
-			: ShaderHandle(pixelShader, "ps_5_0") {}
+		: ShaderHandle(pixelShader, "ps_5_0") {}
 
 	const UniqueComPtr<ID3D11PixelShader> &PixelShaderHandle::Get() const
 	{

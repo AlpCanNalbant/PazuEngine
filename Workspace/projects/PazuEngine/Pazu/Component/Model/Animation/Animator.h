@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "Animation.h"
 
@@ -15,7 +17,7 @@ namespace Pazu
 		void Add(const Animator &animator);
 		void Add(Animator &&animator);
 		template <typename T>
-		requires std::convertible_to<T, Animation>
+			requires std::convertible_to<T, Animation>
 		bool AddAnimation(T &&animation);
 		std::optional<std::reference_wrapper<const Animation>> FindAnimation(const std::string &name) const;
 		std::optional<std::reference_wrapper<Animation>> FindAnimation(const std::string &name);

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Display.h"
 #include "Graphics/Context.h"
 #include "Graphics/IContextHandle.h"
@@ -8,10 +10,10 @@ using namespace magic_enum::flags;
 namespace Pazu
 {
 	Window::Window()
-			: m_handle(std::make_shared<WindowHandle>(DefaultTitle, DefaultPosition, DefaultSize, DefaultFlags)) {}
+		: m_handle(std::make_shared<WindowHandle>(DefaultTitle, DefaultPosition, DefaultSize, DefaultFlags)) {}
 
 	Window::Window(const std::string &title, const Point &position, const Size &size, const WindowFlag flags)
-			: m_handle(std::make_shared<WindowHandle>(title, position, size, flags))
+		: m_handle(std::make_shared<WindowHandle>(title, position, size, flags))
 	{
 		SetSize(size);
 		SetMinimumSize({512, 256});

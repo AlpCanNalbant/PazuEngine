@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.h -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #pragma once
 #include <XMath/DirectXMath.h>
 
@@ -82,12 +85,12 @@ namespace Pazu::Math
 		static void Transform(_In_reads_(count) const Vector4 *varray, size_t count, const Matrix &m, _Out_writes_(count) Vector4 *resultArray) noexcept;
 
 		static const Vector4
-				Zero,
-				One,
-				UnitX,
-				UnitY,
-				UnitZ,
-				UnitW;
+			Zero,
+			One,
+			UnitX,
+			UnitY,
+			UnitZ,
+			UnitW;
 	};
 
 	Vector4 operator+(const Vector4 &V1, const Vector4 &V2) noexcept;

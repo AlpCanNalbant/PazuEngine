@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "StaticModelAsset.h"
 #include "AnimatedModelAsset.h"
 #include "ShaderAsset.h"
@@ -11,14 +13,14 @@
 namespace Pazu
 {
 	AssetManager::AssetManager()
-			: AssetManager(nullptr) {}
+		: AssetManager(nullptr) {}
 
 	AssetManager::AssetManager(const std::shared_ptr<Graphics::Device> &graphicsDevice)
-			: m_graphicsDevice(graphicsDevice),
-				m_loaders({{typeid(StaticModelAsset), std::make_shared<StaticModelAssetLoader>()},
-									 {typeid(AnimatedModelAsset), std::make_shared<AnimatedModelAssetLoader>()},
-									 {typeid(ShaderAsset), std::make_shared<ShaderAssetLoader>()},
-									 {typeid(TextureAsset), std::make_shared<TextureAssetLoader>()}}) {}
+		: m_graphicsDevice(graphicsDevice),
+		  m_loaders({{typeid(StaticModelAsset), std::make_shared<StaticModelAssetLoader>()},
+					 {typeid(AnimatedModelAsset), std::make_shared<AnimatedModelAssetLoader>()},
+					 {typeid(ShaderAsset), std::make_shared<ShaderAssetLoader>()},
+					 {typeid(TextureAsset), std::make_shared<TextureAssetLoader>()}}) {}
 
 	const std::shared_ptr<Graphics::Device> &AssetManager::GetGraphicsDevice() const
 	{

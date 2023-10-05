@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include <SDL2/SDL_syswm.h>
 #include "WindowFlag.h"

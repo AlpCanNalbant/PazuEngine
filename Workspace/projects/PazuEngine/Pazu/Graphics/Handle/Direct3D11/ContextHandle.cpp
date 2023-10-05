@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Shader/VertexShaderHandle.h"
 #include "Shader/PixelShaderHandle.h"
 #include "../../Vertex/VertexPositionNormalColorTexture.h"
@@ -17,10 +19,10 @@ using namespace magic_enum::flags;
 namespace Pazu::Graphics::Direct3D11
 {
 	ContextHandle::ContextHandle(const std::shared_ptr<DeviceHandle> &device, const std::shared_ptr<WindowHandle> &window, const ContextConfig &config)
-			: m_device(device), m_window(window), m_config(config), m_context(m_device->CreateImmediateContext()),
-				m_rasterizerStates{m_device->CreateRasterizerState(false, D3D11_CULL_BACK), m_device->CreateRasterizerState(false, D3D11_CULL_NONE), m_device->CreateRasterizerState(true, D3D11_CULL_NONE)},
-				m_depthStencilStates{m_device->CreateDepthStencilState(), m_device->CreateDepthStencilState(true, D3D11_DEPTH_WRITE_MASK_ZERO)},
-				m_presentFlags(m_device->GetFeatureSupport(DXGI_FEATURE_PRESENT_ALLOW_TEARING) ? DXGI_PRESENT_ALLOW_TEARING : 0)
+		: m_device(device), m_window(window), m_config(config), m_context(m_device->CreateImmediateContext()),
+		  m_rasterizerStates{m_device->CreateRasterizerState(false, D3D11_CULL_BACK), m_device->CreateRasterizerState(false, D3D11_CULL_NONE), m_device->CreateRasterizerState(true, D3D11_CULL_NONE)},
+		  m_depthStencilStates{m_device->CreateDepthStencilState(), m_device->CreateDepthStencilState(true, D3D11_DEPTH_WRITE_MASK_ZERO)},
+		  m_presentFlags(m_device->GetFeatureSupport(DXGI_FEATURE_PRESENT_ALLOW_TEARING) ? DXGI_PRESENT_ALLOW_TEARING : 0)
 	{
 		CreateWindowDependents();
 		SetClearColor(Color::CornflowerBlue);

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "../Graphics/Shader/Shader.h"
 #include "../Graphics/InputLayout/VertexInputLayout.h"

@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "ConstantBuffer.h"
 
 namespace Pazu::Graphics
 {
 	ConstantBuffer::ConstantBuffer(const ShaderFlag shaderFlags, const unsigned int slotIndex, const BufferUsage usage)
-			: Buffer(usage), m_shaderFlags(shaderFlags), m_slotIndex(slotIndex)
+		: Buffer(usage), m_shaderFlags(shaderFlags), m_slotIndex(slotIndex)
 	{
 		m_data.reserve(1);
 		m_data.resize(1);

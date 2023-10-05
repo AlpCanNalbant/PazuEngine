@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Material.h"
 using namespace Pazu::Graphics;
 
 namespace Pazu
 {
 	Material::Material(std::unique_ptr<Shader> shader, std::array<std::unique_ptr<Texture>, 3> textures, const std::array<Color, 3> &colors, const bool twoSided, const DrawMode drawMode)
-			: m_shader(std::move(shader)), m_colors(colors), m_twoSided(twoSided), m_drawMode(drawMode)
+		: m_shader(std::move(shader)), m_colors(colors), m_twoSided(twoSided), m_drawMode(drawMode)
 	{
 		for (std::size_t x = 0; x < textures.size(); ++x)
 		{
@@ -14,7 +16,7 @@ namespace Pazu
 	}
 
 	Material::Material(const Material &other)
-			: m_shader(std::make_unique<Shader>(*other.m_shader)), m_colors(other.m_colors), m_twoSided(other.m_twoSided), m_drawMode(other.m_drawMode)
+		: m_shader(std::make_unique<Shader>(*other.m_shader)), m_colors(other.m_colors), m_twoSided(other.m_twoSided), m_drawMode(other.m_drawMode)
 	{
 		for (const auto &[index, texture] : other.m_textures)
 		{

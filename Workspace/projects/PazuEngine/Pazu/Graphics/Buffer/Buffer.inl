@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu::Graphics
 {
 	template <typename T>
 	Buffer<T>::Buffer(const BufferUsage usage)
-			: m_usage(usage) {}
+		: m_usage(usage) {}
 
 	template <typename T>
 	const void *Buffer<T>::GetData() const

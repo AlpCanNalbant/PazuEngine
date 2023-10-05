@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include "Matrix.h"
 #include "Quaternion.h"
@@ -17,10 +20,10 @@
 namespace Pazu::Math
 {
 	Plane::Plane() noexcept
-			: XMFLOAT4(0.f, 1.f, 0.f, 0.f) {}
+		: XMFLOAT4(0.f, 1.f, 0.f, 0.f) {}
 
 	Plane::Plane(const Vector3 &normal, float d) noexcept
-			: XMFLOAT4(normal.x, normal.y, normal.z, d) {}
+		: XMFLOAT4(normal.x, normal.y, normal.z, d) {}
 
 	Plane::Plane(const Vector3 &point1, const Vector3 &point2, const Vector3 &point3) noexcept
 	{
@@ -40,10 +43,10 @@ namespace Pazu::Math
 	}
 
 	Plane::Plane(const Vector4 &v) noexcept
-			: XMFLOAT4(v.x, v.y, v.z, v.w) {}
+		: XMFLOAT4(v.x, v.y, v.z, v.w) {}
 
 	Plane::Plane(_In_reads_(4) const float *pArray) noexcept
-			: XMFLOAT4(pArray) {}
+		: XMFLOAT4(pArray) {}
 
 	Plane::Plane(DirectX::FXMVECTOR V) noexcept
 	{

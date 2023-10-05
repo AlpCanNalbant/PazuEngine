@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "../Graphics/Texture/Texture2D.h"
 #include "IAsset.h"

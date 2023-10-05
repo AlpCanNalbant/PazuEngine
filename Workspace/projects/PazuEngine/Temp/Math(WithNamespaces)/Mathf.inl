@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu::Math
 {
 	constexpr float Mathf::ToRadians(const float degrees) noexcept

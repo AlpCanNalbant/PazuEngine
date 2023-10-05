@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "../Graphics/Device.h"
 #include "../Graphics/Context.h"
 #include "../Component/Model/Surface/Surface.h"
@@ -12,7 +14,7 @@ namespace Pazu
 	using namespace Graphics;
 
 	RendererSystem::RendererSystem(const std::shared_ptr<CameraSystem> &cameraSystem, const std::shared_ptr<Device> &graphicsDevice, const std::shared_ptr<Context> &graphicsContext)
-			: m_cameraSystem(cameraSystem), m_graphicsDevice(graphicsDevice), m_graphicsContext(graphicsContext), m_blendStates{BlendState(false, Color::Black), BlendState(true, Color::White)}
+		: m_cameraSystem(cameraSystem), m_graphicsDevice(graphicsDevice), m_graphicsContext(graphicsContext), m_blendStates{BlendState(false, Color::Black), BlendState(true, Color::White)}
 	{
 		switch (Engine::GetGraphicsApi())
 		{
@@ -37,7 +39,7 @@ namespace Pazu
 		if (!staticModel && !animatedModel)
 			return Log::Get().Print<LogMode::Error>("RendererSystem icin entity kaydi yapilamadi. Component icerigi eksik.");
 		if (std::find_if(m_components.cbegin(), m_components.cend(), [&entity](const auto &c)
-										 { return std::get<0>(c) == entity; }) != m_components.cend())
+						 { return std::get<0>(c) == entity; }) != m_components.cend())
 			return Log::Get().Print<LogMode::Info>("RendererSystem icin entity kaydi yapilamadi. Zaten kayitli.");
 		m_components.emplace_back(std::make_tuple(entity, staticModel, animatedModel));
 		if (staticModel)
@@ -49,8 +51,8 @@ namespace Pazu
 	void RendererSystem::Unregister(const std::shared_ptr<Entity> &entity)
 	{
 		if (const auto pos = std::find_if(m_components.cbegin(), m_components.cend(), [&entity](const auto &c)
-																			{ return std::get<0>(c) == entity; });
-				pos != m_components.cend())
+										  { return std::get<0>(c) == entity; });
+			pos != m_components.cend())
 			m_components.erase(pos);
 		else
 			Log::Get().Print<LogMode::Info>("RendererSystem icin entity kayit iptali yapilamadi. Kayitli degil.");

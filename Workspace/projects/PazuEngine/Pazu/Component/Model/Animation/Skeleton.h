@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "Bone.h"
 
@@ -12,7 +14,7 @@ namespace Pazu
 		void Add(const Skeleton &skeleton);
 		void Add(Skeleton &&skeleton);
 		template <typename T>
-		requires std::convertible_to<T, Bone>
+			requires std::convertible_to<T, Bone>
 		bool AddBone(T &&bone);
 		void AddBones(std::vector<Bone> &&bones);
 

@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Shader.h"
 
 namespace Pazu::Graphics
 {
 	Shader::Shader(const std::string &source, const bool compiled)
-			: m_source(source), m_compiled(compiled) {}
+		: m_source(source), m_compiled(compiled) {}
 
 	const std::string &Shader::GetSource() const
 	{

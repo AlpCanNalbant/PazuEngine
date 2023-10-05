@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "KeyboardEventData.h"
 #include "KeyboardEvent.h"
 using namespace magic_enum;

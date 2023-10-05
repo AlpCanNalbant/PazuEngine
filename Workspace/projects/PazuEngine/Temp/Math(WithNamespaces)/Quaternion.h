@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.h -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #pragma once
 #include <XMath/DirectXMath.h>
 
@@ -60,7 +63,7 @@ namespace Pazu::Math
 		static Quaternion Concatenate(const Quaternion &q1, const Quaternion &q2) noexcept;
 
 		static const Quaternion
-				Identity;
+			Identity;
 	};
 
 	Quaternion operator+(const Quaternion &Q1, const Quaternion &Q2) noexcept;

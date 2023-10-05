@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include "Matrix.h"
 #include "Quaternion.h"
@@ -17,10 +20,10 @@
 namespace Pazu
 {
 	Vector4::Vector4()
-			: XMFLOAT4(0.f, 0.f, 0.f, 0.f) {}
+		: XMFLOAT4(0.f, 0.f, 0.f, 0.f) {}
 
 	Vector4::Vector4(_In_reads_(4) const float *pArray)
-			: XMFLOAT4(pArray) {}
+		: XMFLOAT4(pArray) {}
 
 	Vector4::Vector4(DirectX::FXMVECTOR V)
 	{
@@ -624,12 +627,12 @@ namespace Pazu
 	}
 
 	const Vector4
-			Vector4::Zero(0.f, 0.f, 0.f, 0.f),
-			Vector4::One(1.f, 1.f, 1.f, 1.f),
-			Vector4::UnitX(1.f, 0.f, 0.f, 0.f),
-			Vector4::UnitY(0.f, 1.f, 0.f, 0.f),
-			Vector4::UnitZ(0.f, 0.f, 1.f, 0.f),
-			Vector4::UnitW(0.f, 0.f, 0.f, 1.f);
+		Vector4::Zero(0.f, 0.f, 0.f, 0.f),
+		Vector4::One(1.f, 1.f, 1.f, 1.f),
+		Vector4::UnitX(1.f, 0.f, 0.f, 0.f),
+		Vector4::UnitY(0.f, 1.f, 0.f, 0.f),
+		Vector4::UnitZ(0.f, 0.f, 1.f, 0.f),
+		Vector4::UnitW(0.f, 0.f, 0.f, 1.f);
 } // namespace Pazu
 
 namespace std

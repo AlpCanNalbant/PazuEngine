@@ -1,10 +1,12 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Device.h"
 using namespace magic_enum::flags;
 
 namespace Pazu::Sdl
 {
 	Device::Device(const InitFlag flags, const DeviceConfig &config)
-			: config(config)
+		: config(config)
 	{
 #ifdef SDL_MAIN_HANDLED
 		Log::Get().Print<LogMode::Info>("SDL_MAIN_HANDLED aktiflestirildi.");

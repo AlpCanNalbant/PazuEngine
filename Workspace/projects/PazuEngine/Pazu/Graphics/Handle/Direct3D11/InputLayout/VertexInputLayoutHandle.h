@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #pragma once
 #include "InputLayoutHandle.h"
 #include "../../../InputLayout/VertexInputLayout.h"

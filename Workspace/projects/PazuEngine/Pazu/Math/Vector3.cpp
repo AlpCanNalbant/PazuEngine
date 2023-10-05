@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.inl -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #include <functional>
 #include "Matrix.h"
 #include "Quaternion.h"
@@ -16,10 +19,10 @@
 namespace Pazu
 {
 	Vector3::Vector3()
-			: XMFLOAT3(0.f, 0.f, 0.f) {}
+		: XMFLOAT3(0.f, 0.f, 0.f) {}
 
 	Vector3::Vector3(_In_reads_(3) const float *pArray)
-			: XMFLOAT3(pArray) {}
+		: XMFLOAT3(pArray) {}
 
 	Vector3::Vector3(DirectX::FXMVECTOR V)
 	{
@@ -540,17 +543,17 @@ namespace Pazu
 	}
 
 	const Vector3
-			Vector3::Zero(0.f, 0.f, 0.f),
-			Vector3::One(1.f, 1.f, 1.f),
-			Vector3::UnitX(1.f, 0.f, 0.f),
-			Vector3::UnitY(0.f, 1.f, 0.f),
-			Vector3::UnitZ(0.f, 0.f, 1.f),
-			Vector3::Up(0.f, 1.f, 0.f),
-			Vector3::Down(0.f, -1.f, 0.f),
-			Vector3::Right(1.f, 0.f, 0.f),
-			Vector3::Left(-1.f, 0.f, 0.f),
-			Vector3::Forward(0.f, 0.f, -1.f),
-			Vector3::Backward(0.f, 0.f, 1.f);
+		Vector3::Zero(0.f, 0.f, 0.f),
+		Vector3::One(1.f, 1.f, 1.f),
+		Vector3::UnitX(1.f, 0.f, 0.f),
+		Vector3::UnitY(0.f, 1.f, 0.f),
+		Vector3::UnitZ(0.f, 0.f, 1.f),
+		Vector3::Up(0.f, 1.f, 0.f),
+		Vector3::Down(0.f, -1.f, 0.f),
+		Vector3::Right(1.f, 0.f, 0.f),
+		Vector3::Left(-1.f, 0.f, 0.f),
+		Vector3::Forward(0.f, 0.f, -1.f),
+		Vector3::Backward(0.f, 0.f, 1.f);
 
 	Vector3 operator+(const Vector3 &V1, const Vector3 &V2)
 	{

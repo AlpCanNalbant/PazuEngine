@@ -1,12 +1,15 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 //-------------------------------------------------------------------------------------
 // SimpleMath.h -- Simplified C++ Math wrapper for DirectXMath
 //
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 //
 // http://go.microsoft.com/fwlink/?LinkId=248929
 // http://go.microsoft.com/fwlink/?LinkID=615561
 //-------------------------------------------------------------------------------------
+
 #pragma once
 #include <XMath/DirectXMath.h>
 
@@ -21,9 +24,9 @@ namespace Pazu
 	{
 		Matrix();
 		constexpr Matrix(float m00, float m01, float m02, float m03,
-										 float m10, float m11, float m12, float m13,
-										 float m20, float m21, float m22, float m23,
-										 float m30, float m31, float m32, float m33);
+						 float m10, float m11, float m12, float m13,
+						 float m20, float m21, float m22, float m23,
+						 float m30, float m31, float m32, float m33);
 		explicit Matrix(const Vector3 &r0, const Vector3 &r1, const Vector3 &r2);
 		explicit Matrix(const Vector4 &r0, const Vector4 &r1, const Vector4 &r2, const Vector4 &r3);
 		Matrix(const XMFLOAT4X4 &M);
@@ -69,10 +72,10 @@ namespace Pazu
 		void Invert(Matrix &result) const;
 		float Determinant() const;
 		static Matrix CreateBillboard(
-				const Vector3 &object, const Vector3 &cameraPosition, const Vector3 &cameraUp, _In_opt_ const Vector3 *cameraForward = nullptr);
+			const Vector3 &object, const Vector3 &cameraPosition, const Vector3 &cameraUp, _In_opt_ const Vector3 *cameraForward = nullptr);
 		static Matrix CreateConstrainedBillboard(
-				const Vector3 &object, const Vector3 &cameraPosition, const Vector3 &rotateAxis,
-				_In_opt_ const Vector3 *cameraForward = nullptr, _In_opt_ const Vector3 *objectForward = nullptr);
+			const Vector3 &object, const Vector3 &cameraPosition, const Vector3 &rotateAxis,
+			_In_opt_ const Vector3 *cameraForward = nullptr, _In_opt_ const Vector3 *objectForward = nullptr);
 		static Matrix CreateTranslation(const Vector3 &position);
 		static Matrix CreateTranslation(float x, float y, float z);
 		static Matrix CreateScale(const Vector3 &scales);
@@ -99,7 +102,7 @@ namespace Pazu
 		static Matrix Transform(const Matrix &M, const Quaternion &rotation);
 
 		static const Matrix
-				Identity;
+			Identity;
 	};
 
 	Matrix operator+(const Matrix &M1, const Matrix &M2);

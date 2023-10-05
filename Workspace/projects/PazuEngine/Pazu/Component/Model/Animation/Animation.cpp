@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Animation.h"
 
 namespace Pazu
 {
 	Animation::Animation(const std::string &name, const std::unordered_map<std::string, std::vector<BoneFrame>> &boneFrames)
-			: m_name(name), m_boneFrames(boneFrames) {}
+		: m_name(name), m_boneFrames(boneFrames) {}
 
 	void Animation::AddBoneFrame(const std::string &boneName, const BoneFrame &boneFrame)
 	{

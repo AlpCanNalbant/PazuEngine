@@ -1,9 +1,11 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "InfoVersion.h"
 
 namespace Pazu
 {
 	InfoVersion::InfoVersion(const int major, const int minor, const int patch)
-			: major(major), minor(minor), patch(patch) {}
+		: major(major), minor(minor), patch(patch) {}
 
 	std::string InfoVersion::ToString() const
 	{

@@ -1,3 +1,5 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 #include "Vector2.h"
 #include "Transform.h"
 
@@ -10,7 +12,7 @@ namespace Pazu
 	}
 
 	Transform::Transform(const Transform &other)
-			: m_position(other.m_position), m_quaternion(other.m_quaternion), m_rotation(other.m_rotation), m_scale(other.m_scale), m_matrix(other.m_matrix) {}
+		: m_position(other.m_position), m_quaternion(other.m_quaternion), m_rotation(other.m_rotation), m_scale(other.m_scale), m_matrix(other.m_matrix) {}
 
 	Transform &Transform::operator=(const Transform &other)
 	{

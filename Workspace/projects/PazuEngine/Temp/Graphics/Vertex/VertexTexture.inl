@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexTexture<T>::VertexTexture(const std::array<T, 2> &textureData) noexcept
-			: m_textureData(textureData) {}
+		: m_textureData(textureData) {}
 
 	template <typename T>
 	VertexTexture<T>::VertexTexture(const Vector2 &texture) noexcept

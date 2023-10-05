@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	VertexNormal<T>::VertexNormal(const std::array<T, 3> &normalData) noexcept
-			: m_normalData(normalData) {}
+		: m_normalData(normalData) {}
 
 	template <typename T>
 	VertexNormal<T>::VertexNormal(const Vector3 &normal) noexcept

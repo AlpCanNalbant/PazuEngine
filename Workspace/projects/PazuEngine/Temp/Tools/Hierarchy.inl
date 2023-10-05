@@ -1,8 +1,10 @@
+// Copyright (c) Alp Can Nalbant. Licensed under the MIT License.
+
 namespace Pazu
 {
 	template <typename T>
 	Hierarchy<T>::Hierarchy(T *owner, Transform *transform) noexcept
-			: m_owner(owner), m_transform(transform) {}
+		: m_owner(owner), m_transform(transform) {}
 
 	template <typename T>
 	Hierarchy<T>::~Hierarchy() noexcept
