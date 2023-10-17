@@ -1,1 +1,1 @@
-set texturesHome=%UserProfile%\\WindchimeSoftware\\Workspace\\projects\\Sample\\Assets
+set texturesHome=%UserProfile%\\WS\\Workspace\\projects\\Sample\\Assets

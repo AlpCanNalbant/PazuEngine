@@ -1,4 +1,4 @@
-set home=%UserProfile%\\WindchimeSoftware
+set home=%UserProfile%\\WS
 set workspaceHome=%home%\\Workspace
 set workspaceProjectsHome=%workspaceHome%\\projects
 set depsHome=%workspaceHome%\\deps
